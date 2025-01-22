@@ -24,7 +24,7 @@ public class EqualArrays06 {
             int number2 = Secondnumbers[i];
 
             if (number1 == number2) {
-                sum = number1 + number2;
+                sum += number1;
             }
             else {
                 System.out.printf("Arrays are not identical. Found difference at %d index.", i);
