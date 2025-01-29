@@ -7,6 +7,16 @@ public class Demo {
         printHello();
         printHello();
 
+        char a = 'v';
+        char b = 'a';
+
+        if (a > b) {
+            System.out.println(a);
+        }
+        else {
+            System.out.println(b);
+        }
+
 
 
 
