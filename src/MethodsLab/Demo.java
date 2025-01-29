@@ -9,13 +9,18 @@ public class Demo {
 
         char a = 'v';
         char b = 'a';
+        char maxNum = ' ';
 
         if (a > b) {
             System.out.println(a);
+            maxNum = a;
         }
         else {
             System.out.println(b);
+            maxNum = b;
         }
+
+       // maxNum = a;
 
 
 

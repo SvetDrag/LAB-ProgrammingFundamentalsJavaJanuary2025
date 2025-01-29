@@ -2,7 +2,7 @@ package MethodsLab;
 
 import java.util.Scanner;
 
-public class GreaterОfTwoValues09 {
+public class GreaterOfTwoValues09 {
 
     public static void main(String[] args) {
 
@@ -20,10 +20,12 @@ public class GreaterОfTwoValues09 {
         else if (value.equals("char")){
             char firstChar = scanner.nextLine().charAt(0);
             char secondChar = scanner.nextLine().charAt(0);
+            System.out.println(getMax(firstChar, secondChar));
         }
-        else if (value.equals("String")){
-            String firstName = scanner.nextLine();
-            String secondName = scanner.nextLine();
+        else if (value.equals("string")){
+            String firstString = scanner.nextLine();
+            String secondString = scanner.nextLine();
+            System.out.println(getMax(firstString, secondString));
         }
 
     }
@@ -41,13 +43,25 @@ public class GreaterОfTwoValues09 {
     }
 
     public static char getMax (char firstChar, char secondChar){
-        char maxNum = '';
+        char maxNum = ' ';
 
-        if (firstNum > secondNum){
-            maxNum = firstNum;
+        if (firstChar > secondChar){
+            maxNum = firstChar;
         }
         else {
-            maxNum = secondNum;
+            maxNum = secondChar;
+        }
+        return maxNum;
+    }
+
+    public static String getMax (String firstString, String secondString){
+        String maxNum = " ";
+
+        if (firstString.compareTo(secondString) >= 0){
+            maxNum = firstString;
+        }
+        else {
+            maxNum = secondString;
         }
         return maxNum;
     }
