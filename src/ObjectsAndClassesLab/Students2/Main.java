@@ -23,8 +23,19 @@ public class Main {
             int age = Integer.parseInt(command.split(" ")[2]);
             String homeTown = command.split(" ")[3];
 
-            Student student = new Student(firstName, lastName, age, homeTown);
-            studentsList.add(student);
+            if (isStudentExist(studentsList, firstName, lastName)){
+                int index = getStudentIndex(studentsList, firstName, lastName);
+
+                studentsList.get(index).setAge(age);
+                studentsList.get(index).setHomeTown(homeTown);
+            }
+            else {
+                Student student = new Student(firstName, lastName, age, homeTown);
+                studentsList.add(student);
+            }
+
+            //Student student = new Student(firstName, lastName, age, homeTown);
+            //studentsList.add(student);
 
             command = scanner.nextLine();
         }
@@ -38,6 +49,31 @@ public class Main {
 
         }
 
+
+    }
+
+    private static boolean isStudentExist(List<Student> studentList, String firstName, String lastName){
+
+
+        for (Student student : studentList){
+            if (student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)){
+                return true;
+            }
+        }
+        return false;
+
+    }
+
+    private static int getStudentIndex(List<Student> studentList, String firstName, String lastName){
+
+        int index = -1;
+        for (int i = 0; i < studentList.size(); i++) {
+            Student student = studentList.get(i);
+            if (student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)){
+                index = i;
+            }
+        }
+        return index;
 
     }
 }
