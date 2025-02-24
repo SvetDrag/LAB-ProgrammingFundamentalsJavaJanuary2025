@@ -1,13 +1,13 @@
 package ObjectsAndClassesLab.Students2;
 
-public class Students2 {
+public class Student {
 
     private String firstName;
     private String lastName;
     private int age;
     private String homeTown;
 
-    public Students2(String firstName, String lastName, int age, String homeTown) {
+    public Student(String firstName, String lastName, int age, String homeTown) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
