@@ -1,9 +1,6 @@
 package AssociativeArrays;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class WordSynonyms02 {
     public static void main(String[] args) {
@@ -13,18 +10,27 @@ public class WordSynonyms02 {
 
         int n = Integer.parseInt(scanner.nextLine());
 
-        Map<String, List> synonymsMap = new HashMap<>();
+        Map<String, String> synonymsMap = new LinkedHashMap<>();
 
 
-        for (int i = 0; i < 3 ; i++) {
+        for (int i = 0; i < n ; i++) {
 
             String word = scanner.nextLine();
             String synonym = scanner.nextLine();
 
             if (!synonymsMap.containsKey(word)){
-                
+                synonymsMap.put(word, synonym);
+            }
+            else {
+                String currentSynonym = synonymsMap.get(word);
+                synonymsMap.put(word, currentSynonym + ", " + synonym);
             }
 
+        }
+
+        for (Map.Entry<String, String> entry : synonymsMap.entrySet()){
+
+            System.out.println(entry.getKey() + " - " + entry.getValue());
         }
 
 
