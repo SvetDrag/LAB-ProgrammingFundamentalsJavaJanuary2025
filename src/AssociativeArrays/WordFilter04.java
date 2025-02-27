@@ -13,7 +13,7 @@ public class WordFilter04 {
                           .toArray(String [] :: new); //if lettes of word is even -> print
 
         for (String t : words){
-            System.out.printf("%s ", t);
+            System.out.printf("%s%n", t);
         }
 
         //Arrays.stream(words).forEach(System.out::print);
