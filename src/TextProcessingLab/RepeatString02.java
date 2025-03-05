@@ -11,8 +11,9 @@ public class RepeatString02 {
         String word = "";
         int n = input.length;
         for (int i = 0; i < n; i++) {
-            for (int j = 0; j < input.length; j++) {
-                System.out.print(input[j]);
+            int wordLenght = input[i].length();
+            for (int j = 0; j < wordLenght; j++) {
+                System.out.print(input[i]);
             }
         }
 
